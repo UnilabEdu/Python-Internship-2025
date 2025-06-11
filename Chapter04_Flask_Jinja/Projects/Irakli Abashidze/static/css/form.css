@@ -62,14 +62,20 @@
 .input-with-icon i {
     position: absolute;
     left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
     color: #4CAF50;
     font-size: 1.2em;
     transition: color 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
 }
 
 /* Form Input and Select Styles - Custom form controls */
 .input-with-icon input,
-.input-with-icon select {
+.input-with-icon select,
+.input-with-icon input[type="date"],
+.input-with-icon input[type="file"] {
     width: 100%;
     padding: 15px 15px 15px 45px;
     border: 2px solid #dfe6e9;
@@ -78,6 +84,13 @@
     transition: all 0.3s ease;
     background: white;
     color: #2d3436;
+    height: auto;
+    line-height: normal;
+}
+
+.input-with-icon input[type="file"] {
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 /* Input Focus States - Enhanced visual feedback */

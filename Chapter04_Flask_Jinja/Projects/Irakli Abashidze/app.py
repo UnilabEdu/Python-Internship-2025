@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
+app.secret_key = '25848482828rfrg5rf5'
 
 
 @app.route("/")
@@ -51,13 +52,28 @@ def index():
     ]
     return render_template("index.html", programs=programs)
 
+
 @app.route("/about")
 def about():
     return render_template("about.html")
 
-@app.route("/form")
+
+@app.route("/form", methods=['GET', 'POST'])
 def form():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        program = request.form.get('program')
+        phone = request.form.get('phone')
+
+        if not all([name, program, phone]):
+            flash('გთხოვთ შეავსოთ ყველა ველი', 'error')
+        else:
+
+            flash('რეგისტრაცია წარმატებით დასრულდა! ჩვენი გუნდი მალე დაგიკავშირდებათ', 'success')
+            return redirect(url_for('form'))
+
     return render_template("form.html")
+
 
 @app.route("/faq")
 def faq():

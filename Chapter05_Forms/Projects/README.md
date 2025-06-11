@@ -9,7 +9,9 @@
 - სალომე პაპაშვილი | [Forms] (https://github.com/KiwiScreams/Python-Internship-2025/blob/main/Chapter05_Forms/Projects/Salome_Papashvili/app.py)
 - ნინო წიკლაური | [Registration Form](/Chapter05_Forms/Projects/Nino_Tsiklauri/app.py)
 - დავით ეგოიანი | [Submission Form](/Chapter05_Forms/Projects/Davit%20Egoian/app.py)
-- 
+- ირაკლი აბაშიძე | [ Fitness Club](https://github.com/blitz-flex/Python-Internship-2025/blob/main/Chapter05_Forms/Projects/Irakli%20Abashidze/app.py)
+
+
 ## ინსტრუქცია:
 
 გამართეთ Flask აპლიკაციის ფორმა რომლის გამოყენებითაც მომხმარებლისგან მიიღებთ მონაცემებს და უკან დაუბრუნებთ შემაჯამებელ შეტყობინებას.
