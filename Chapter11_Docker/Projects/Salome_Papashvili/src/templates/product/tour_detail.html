@@ -1,0 +1,31 @@
+{% extends "partials/base.html" %}
+{% block title %}{{tour.title}}{%endblock %}
+{% block content %}
+<div class="container my-5 flex">
+    <div class="card shadow-sm" style="width: 50%;">
+
+        <div class="card-body">
+            <h1 class="card-title">{{tour.title}}</h1>
+            <p>Country: <strong>{{tour.country}}</strong></p>
+
+            <div class="mb-3">
+                <span class="fs-3 text-danger">{{tour.price}}</span>
+                <span class="fs-5 text-decoration-line-through">{{old_price}}</span>
+            </div>
+
+            <p class="card-text">
+                {{tour.description}}
+            </p>
+
+            <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item">Duration: {{tour.duration}}</li>
+            </ul>
+
+            <div class="d-grid">
+                <button class="btn btn-custom btn-lg">Book Now</button>
+            </div>
+        </div>
+    </div>
+    <img src="/static/upload/{{tour.image}}" class="image rounded" style="width: 500px;"  alt="{{tour.title}}">
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "partials/base.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+
+<div class="container d-flex justify-content-center">
+    <div class="card rounded-4 w-100 my-5" style="max-width: 600px;">
+        <div class="card-body p-4">
+            <h2 class="card-title text-center mb-4">Sign Up</h2>
+            {% for errors in form.errors.values() %}
+                {% for error in errors %}
+                    <p class="text-danger">{{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+            <form method="post" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <div class="row mb-3">
+                    <div class="mb-4">
+                        {{ form.profile_image(placeholder=form.profile_image.label.text, class="form-control", accept=".jpg, .png, .jpeg") }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.username(placeholder=form.username.label.text, class="form-control") }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.email(placeholder=form.email.label.text, class="form-control") }}
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        {{ form.password(placeholder=form.password.label.text, class="form-control") }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.repeat_password(placeholder=form.repeat_password.label.text, class="form-control") }}
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    {{ form.country(placeholder=form.country.label.text, class="form-select") }}
+                </div>
+                <div class="mb-4">
+                    {{ form.birthday(placeholder=form.birthday.label.text, class="form-control") }}
+                </div>
+                <div class="mb-3">
+                    {{ form.gender(placeholder=form.gender.label.text) }}
+                </div>
+                {{ form.submit(placeholder=form.submit.label.text, class="btn btn-custom w-100 py-2") }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

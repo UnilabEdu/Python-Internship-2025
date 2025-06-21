@@ -1,0 +1,58 @@
+{% extends "partials/base.html" %}
+{% block title %}Add Tour{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center">
+    <div class="card rounded-4 w-100 my-5" style="max-width: 600px;">
+        <div class="card-body p-4">
+            <h2 class="mb-4 text-center">Add New Tour</h2>
+            <form method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <ul class="mb-0">
+                        {% for field_errors in form.errors.values() %}
+                            {% for error in field_errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                <div class="form-group mb-3">
+                    {{ form.title(class="form-control", placeholder="Enter tour title") }}
+                </div>
+
+                <div class="form-group mb-3">
+                    {{ form.country(class="form-select", placeholder="Enter country") }}
+                </div>
+
+                <div class="form-group mb-3">
+                    {{ form.description(class="form-control", placeholder="Enter description") }}
+                </div>
+
+                <div class="form-group mb-3">
+                    {{ form.price(class="form-control", placeholder="Enter current price") }}
+                </div>
+
+                <div class="form-group mb-3">
+                    {{ form.currency(class="form-select") }}
+                </div>
+
+                <div class="form-group mb-3">
+                    {{ form.image(class="form-control", accept=".jpg, .png, .jpeg") }}
+                </div>
+
+                <div class="form-group mb-4">
+                    {{ form.duration(class="form-control", placeholder="e.g. 4 days") }}
+                </div>
+
+                <div class="text-center">
+                    {{ form.submit(class="btn btn-custom") }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
