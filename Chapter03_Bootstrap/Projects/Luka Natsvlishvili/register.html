@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coffeewood Entertainment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body, html {
+            height: 100% !important;
+        }
+    </style>
+</head>
+<body class="bg-body-secondary">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary mb-3" data-bs-theme="dark">
+  <div class="container-md">
+    <a class="navbar-brand" href="#">Coffeewood<br>Entertainment</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Comments</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Filtering
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Most Popular</a></li>
+            <li><a class="dropdown-item" href="#">Most Discussed</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="d-flex btn-group" role="search">
+        <a class="btn btn-danger" href="login.html">Login</a>
+        <a class="btn btn-outline-danger" href="register.html">Register</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container-md bg-white px-3 py-4 shadow border rounded d-flex justify-content-center">
+  <div class="w-50">
+    <div class="mb-1">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" placeholder="Please enter your username">
+    </div>
+    <div class="mb-1">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Please enter your password">
+    </div>
+    <div class="mb-1">
+      <label for="date" class="form-label">Birthdate</label>
+      <input type="date" class="form-control" id="date">
+    </div>
+    <div class="mb-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="maleGender">
+        <label class="form-check-label" for="maleGender">
+          Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="femaleGender">
+        <label class="form-check-label" for="femaleGender">
+          Female
+        </label>
+      </div>
+    </div>
+    <div class="mb-1">
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Choose your country</option>
+        <option value="1">Georgia</option>
+        <option value="2">USA</option>
+        <option value="3">Germany</option>
+        <option value="4">Canada</option>
+        <option value="5">Japan</option>
+        <option value="6">France</option>
+        <option value="7">Spain</option>
+        <option value="8">Italy</option>
+      </select>
+    </div>
+    <div class="mb-1">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="movielover">
+        <label class="form-check-label" for="movielover">
+          Movie lover
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="tvserieslover" checked>
+        <label class="form-check-label" for="tvserieslover">
+          Tv Series lover
+        </label>
+      </div>
+    </div>
+    <div class="mb-1">
+      <textarea placeholder="About You" class="form-control"></textarea>
+    </div>
+    <button type="button" class="btn btn-success">Register</button>
+    <button type="button" class="btn btn-danger">Cancel</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

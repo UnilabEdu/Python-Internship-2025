@@ -15,6 +15,8 @@
 - დავით ეგოიანი | [Portfolio](/Chapter02_HTML_CSS/Projects/Davit%20Egoian/portfolio/portfolio.html) | [View](https://htmlpreview.github.io/?https://github.com/DavitEgoian/Python-Internship-2025/blob/main/Chapter02_HTML_CSS/Projects/Davit%20Egoian/portfolio/portfolio.html) | [Feetback Form](/Chapter02_HTML_CSS/Projects/Davit%20Egoian/feetback_form/home.html) | [https://htmlpreview.github.io/?https://github.com/DavitEgoian/Python-Internship-2025/blob/main/Chapter02_HTML_CSS/Projects/Davit%20Egoian/feetback_form/home.html]
 - გიორგი კელენჯერიძე [Food Order](/Chapter02_HTML_CSS/Projects/GiorgiKelenjeridze) | [View](https://htmlpreview.github.io/?https://github.com/kelenjo/Python-Internship-2025/blob/main/Chapter02_HTML_CSS/Projects/GiorgiKelenjeridze/Project1/index.html)
 
+-ლუკა ნაცვლიშვილი https://htmlpreview.github.io/?https://github.com/Luka929-del/Python-Internship-2025/blob/main/Chapter02_HTML_CSS/Projects/Luka%20Natsvlishvili/index.html 
+
 ## ინსტრუქცია
 მოამზადეთ პროექტის ინსტრქუციაში აღწერილი პირობის შესაბამისი ორი HTML პროექტი და დაამატეთ ზემოთ ნაჩვენებ სიაში მათი საჩვენებელი მისამართები. (იხ. დამატებით რესურსები)
 

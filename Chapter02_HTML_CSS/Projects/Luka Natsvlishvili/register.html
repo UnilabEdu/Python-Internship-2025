@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<form>
+    <div class="form-group">
+        <input class="form-input" type="text" placeholder="Username"/><br/>
+        <input class="form-input" type="password" placeholder="Password"/>
+    </div>
+
+    <div class="form-group">
+        <p>Birthday: </p>
+        <input class="form-group" type="date"/>
+
+        <p>Gender: </p>
+        <input type="radio" name="gender"/>Male<br/>
+        <input type="radio" name="gender"/>Female<br/>
+
+        <p>Country: </p>
+        <select class="form-group">
+            <option>Georgia</option>
+            <option>US</option>
+            <option>Germany</option>
+        </select><br/>
+    </div>
+
+    <div class="form-group">
+        <textarea placeholder="About You" cols="36" rows="12"></textarea><br/>
+    </div>
+    <button class="button-success button">Register</button>
+    <button class="button-danger button">Cancel</button>
+</form>
+
+</body>
+</html>
