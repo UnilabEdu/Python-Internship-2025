@@ -1,0 +1,17 @@
+{% extends "partials/base.html" %}
+{% block title %}{{ current_user.username }}'s Profile{% endblock %}
+
+{% block content %}
+<div class="container my-5 flex">
+    <div class="card shadow-sm" style="width: 50%;">
+
+        <div class="card-body">
+            <h1 class="card-title">{{ current_user.username }}</h1>
+            <p>Password: <strong>{{ current_user.password }}</strong></p>
+        </div>
+    </div>
+
+    <img src="{{ url_for('static', filename='upload/' + current_user.profile_image) }}"
+         class="image rounded" style="width: 500px;" alt="{{ current_user.username }}">
+</div>
+{% endblock %}

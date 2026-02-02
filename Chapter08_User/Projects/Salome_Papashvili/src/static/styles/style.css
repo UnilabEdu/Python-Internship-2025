@@ -1,0 +1,80 @@
+*
+{
+    list-style-type: none;
+}
+body
+{
+    background: linear-gradient(to right, #e0f7fa, #fff);
+}
+.hero
+{
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.3), #0000005e),
+                  url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsfGVufDB8fDB8fHww') center/cover no-repeat;
+    color: white;
+}
+.flex
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.custom-hero
+{
+    height: 20vh;
+}
+h1
+{
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+.nav-link
+{
+    color: #fff;
+}
+.active-link
+{
+    color: #268a97;
+}
+.card img
+{
+    height: 200px;
+    object-fit: cover;
+}
+.btn-custom
+{
+    background: #268a97;
+    border: #02C211;
+    color: #fff;
+}
+.btn-custom:hover
+{
+    background: #16626C;;
+    color: #fff;
+}
+footer
+{
+    background-color: #16626C;
+    color: white;
+}
+::-webkit-scrollbar
+{
+  display: block;
+  width: 12px;
+}
+::-webkit-scrollbar-thumb
+{
+  background-color: #268a97;
+}
+::-webkit-scrollbar-track
+{
+  background-color: #fff;
+}
+.dot
+{
+    border-radius: 50%;
+}
+.image
+{
+    width: 50%;
+}
