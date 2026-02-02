@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Register - Coffeewood{% endblock %}
+
+{% block content %}
+<div class="container-md bg-white px-3 py-4 shadow border rounded d-flex justify-content-center">
+    <form class="w-50" method="post" enctype="multipart/form-data">
+        {% for errors in form.errors.values() %}
+            {% for error in errors %}
+                <p class="text-danger">* {{ errors }}</p>
+            {% endfor %}
+        {% endfor %}
+        {{ form.hidden_tag() }}
+        {{ form.username(placeholder=form.username.label.text, class="form-control") }}
+        {{ form.password(placeholder=form.password.label.text, class="form-control mt-2") }}
+        {{ form.repeat_password(placeholder=form.repeat_password.label.text, class="form-control mt-2") }}
+        {{ form.birthdate(class="form-control mt-2") }}
+        {{ form.gender(class="mt-2") }}
+        {{ form.country(class="form-select mt-2") }}
+        {{ form.profile_image(class="form-control mt-2", accept=".jpg,.png,.jpeg") }}
+        {{ form.about(class="form-control mt-2", placeholder=form.about.label.text) }}
+        {{ form.submit(class="btn btn-success mt-2") }}
+        {{ form.cancel(class="btn btn-danger mt-2") }}
+    </form>
+</div>
+{% endblock %}
+
