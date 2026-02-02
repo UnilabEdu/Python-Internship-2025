@@ -12,6 +12,10 @@
 - სალომე პაპაშვილი | [GlobeTales (with Bootstrap)] (https://github.com/KiwiScreams/Python-Internship-2025/blob/main/Chapter03_Bootstrap/Projects/Salome_Papashvili/GlobeTales/index.html) | [view](https://htmlpreview.github.io/?https://github.com/KiwiScreams/Python-Internship-2025/blob/main/Chapter03_Bootstrap/Projects/Salome_Papashvili/GlobeTales/index.html)
 - ირაკლი აბაშიძე  | [Fitness Club (with bootstrap)](https://github.com/blitz-flex/Python-Internship-2025/blob/main/Chapter03_Bootstrap/Projects/Irakli%20Abashidze/Fitness%20Club/index.html)|   [View](https://htmlpreview.github.io/?https://raw.githubusercontent.com/blitz-flex/Python-Internship-2025/main/Chapter03_Bootstrap/Projects/Irakli%20Abashidze/Fitness%20Club/index.html)
 
+### 2025 ზამთარი
+
+- [ლუკა ნაცვლიშვილი | Coffeewood Entertainment] (https://htmlpreview.github.io/?https://raw.githubusercontent.com/Luka929-del/Python-Internship-2025/main/Chapter03_Bootstrap/Projects/Luka%20Natsvlishvili/index.html)
+
 ## ინსტრუქცია:
 
 წინა თავში შესრულებულ ან სრულიად ახალ ვებ გვერდს გაუკეთეთ სტილი Bootstrap-ის გამოყენებით

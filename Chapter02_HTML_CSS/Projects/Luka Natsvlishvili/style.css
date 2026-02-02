@@ -1,0 +1,82 @@
+html {
+    background-color: gray;
+}
+
+.form-group {
+    border: 2px black solid;
+    padding: 12px;
+    border-radius: 14px;
+    background-color: white;
+    font-size: 30px;
+    margin-top: 12px;
+}
+
+.form-input {
+    width: 200px;
+    height: 25px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: 2px solid black;
+    transition: all 250ms;
+}
+
+.form-input:focus {
+    border: 3px solid blue;
+}
+
+body {
+    padding: 12px;
+}
+
+p {
+    color: brown;
+    font-size: 25px;
+}
+
+.button {
+    color: white;
+    border-radius: 12px;
+    border: none;
+    width: 92px;
+    height: 32px;
+    cursor: pointer;
+    transition: all 250ms;
+}
+
+.button-success {
+    background-color: #7CFC00;
+}
+
+.button-success:hover {
+    background-color: #3CB371;
+    width: 100px;
+    height: 36px;
+}
+
+.button-danger {
+    background-color: #F08080;
+}
+
+.button-danger:hover {
+    background-color: #FF0000;
+    width: 100px;
+    height: 36px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+.redirect {
+    color: brown;
+}

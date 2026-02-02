@@ -1,0 +1,22 @@
+{% from "macros.html" import create_navlink %}
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary mb-3" data-bs-theme="dark">
+    <div class="container-md">
+        <a class="navbar-brand" href="/">Coffeewood<br>Entertainment</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                {{ create_navlink('index', 'Home') }}
+                {{ create_navlink('about', 'About') }}
+            </ul>
+            <div class="btn-group">
+                <a class="btn btn-danger" href="{{ url_for('login') }}">Login</a>
+                <a class="btn btn-outline-danger" href="{{ url_for('register') }}">Register</a>
+            </div>
+        </div>
+    </div>
+</nav>

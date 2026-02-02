@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Register - Coffeewood{% endblock %}
+
+{% block content %}
+<div class="container-md bg-white px-3 py-4 shadow border rounded d-flex justify-content-center">
+    <div class="w-50">
+        <input class="form-control mb-2" placeholder="Username">
+        <input type="password" class="form-control mb-2" placeholder="Password">
+        <input type="date" class="form-control mb-2">
+        <div class="mb-2">
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+        </div>
+        <select class="form-select mb-2">
+            <option>Georgia</option>
+            <option>USA</option>
+            <option>Germany</option>
+        </select>
+        <textarea class="form-control mb-2" placeholder="About you"></textarea>
+        <button class="btn btn-success">Register</button>
+        <a href="{{ url_for('index') }}" class="btn btn-danger">Cancel</a>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,5 @@
+{% macro is_active(endpoint_name) %}
+{% if endpoint_name == request.endpoint %}
+active-link
+{% endif %}
+{% endmacro %}

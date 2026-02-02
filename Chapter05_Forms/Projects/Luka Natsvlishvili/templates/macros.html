@@ -1,0 +1,30 @@
+{% macro create_navlink(endpoint_name, display_name) %}
+  <li class="nav-item">
+    <a class="nav-link {% if request.endpoint == endpoint_name %} active {% endif %}" href="{{ url_for(endpoint_name) }}">{{ display_name }}</a>
+  </li>
+{% endmacro %}
+
+{% macro create_card(movie) %}
+  <div class="col">
+      <div class="card h-100">
+          <img src="{{ url_for('static', filename=movie.img) }}" class="card-img-top" alt="{{ movie.name }}">
+          <div class="card-body">
+              <h5 class="card-title">{{ movie.name }}</h5>
+
+              <p class="card-text small">
+                  <strong>{{ movie.comment1_author }}</strong><br>
+                  {{ movie.comment1_text }}
+              </p>
+
+              <p class="card-text small">
+                  <strong>{{ movie.comment2_author }}</strong><br>
+                  {{ movie.comment2_text }}
+              </p>
+
+              <a href="{{ url_for('view_movie', movie_id=movie.movie_id) }}" class="btn btn-outline-primary btn-sm">
+                  უფრო ვრცლად
+              </a>
+          </div>
+      </div>
+  </div>
+{% endmacro %}

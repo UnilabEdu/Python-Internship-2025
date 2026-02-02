@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Coffeewood{% endblock %}
+
+{% block content %}
+<div class="container-md bg-white px-3 py-4 shadow border rounded d-flex justify-content-center">
+    <div class="w-50">
+        <label>Username</label>
+        <input class="form-control mb-2">
+        <label>Password</label>
+        <input type="password" class="form-control mb-2">
+        <button class="btn btn-success">Log In</button>
+        <a href="{{ url_for('index') }}" class="btn btn-danger">Cancel</a>
+    </div>
+</div>
+{% endblock %}
+

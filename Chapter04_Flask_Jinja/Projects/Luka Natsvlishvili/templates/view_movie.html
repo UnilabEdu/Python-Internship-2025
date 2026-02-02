@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{ movie.name }} - Coffeewood{% endblock %}
+
+{% block content %}
+<div class="container-md bg-white px-3 py-4 shadow border rounded">
+    <img src="{{ url_for('static', filename=movie['img']) }}" class="img-fluid mb-3" alt="{{ movie.name }}">
+
+    <table class="table">
+        <tr>
+            <th>Movie Name</th>
+            <td>{{ movie["name"] }}</td>
+        </tr>
+        <tr>
+            <th>Release Date</th>
+            <td>{{ movie["release_date"] }}</td>
+        </tr>
+        <tr>
+            <th>Genre</th>
+            <td>{{ movie["genre"] }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
