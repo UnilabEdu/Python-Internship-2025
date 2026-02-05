@@ -3,7 +3,7 @@
 დირექტორიაში განთავსებულია კონტრიბუტორთა HTML პროექტები
 
 ## პროექტები
-
+- ვასიფ მამედოვი [View](https://htmlpreview.github.io/?https://github.com/VasifMamedov/Python-Internship-2025/blob/main/Chapter02_HTML_CSS/Projects/Vasif_Mamedov/register.html) | [View](https://htmlpreview.github.io/?https://github.com/VasifMamedov/Python-Internship-2025/blob/main/Chapter02_HTML_CSS/Projects/Vasif_Mamedov/index.html)
 - ირაკლი აბაშიძე  [პროექტის სახელი](https://github.com/blitz-flex/Python-Internship-2025/tree/main/Chapter02_HTML_CSS/Projects/Irakl%20Abashidze)   | [View](https://htmlpreview.github.io/?https://github.com/blitz-flex/Python-Internship-2025/blob/main/Chapter02_HTML_CSS/Projects/Irakl%20Abashidze/Fitness%20Club/index.html)
 
 - ბექა გიგაშვილი | [Learning Website](/Chapter02_HTML_CSS/Projects/Beka_Gigashvili) | [View](https://htmlpreview.github.io/?https://github.com/BekaGigashvili/Python-Internship-2025/blob/adding-my-code/Chapter02_HTML_CSS/Projects/Beka_Gigashvili/course_cards/index.html)

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container-md bg-light py-3 px-4 shadow-lg rounded-4 mt-3 d-flex justify-content-center text-center ">
+        <img src="{{ product['img'] }}"/>
+            <table class="table table-warning table-striped" >
+                <tr>
+                    <th>Product Name</th>
+                    <td>{{ product['name'] }}</td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>{{ product['price'] }}</td>
+                </tr>
+            </table>
+    </div>
+{% endblock %}

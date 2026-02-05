@@ -1,0 +1,46 @@
+html{
+
+}
+body{
+    padding: 20px;
+}
+p {
+    color: red;
+    font-size: 20px;
+}
+.button-success {
+    background-color: #15e415;
+}
+.button-danger{
+    background-color: red;
+}
+.form-group{
+    border: 3px green solid;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 16px;
+}
+.form-input{
+    border-radius: 10px;
+    height: 20px;
+    width: 200px;
+    margin: 8px;
+}
+.form-input:focus{
+    border-color: greenyellow;
+    transition: all 120ms;
+}
+.button{
+    color: black;
+    border: none;
+    border-radius: 10px;
+    width: 94px;
+    height: 32px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.button-success:hover{
+    background: #007a00;
+    padding: 10px;
+    width: 100px;
+}
