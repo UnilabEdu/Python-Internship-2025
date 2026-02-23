@@ -2,8 +2,7 @@
 
 დირექტორიაში განთავსებულია კონტრიბუტორთა პირველი Bootstrap პროექტები
 
-### 2025 ზაფხული
-
+- Luka Shvelidze | [Homework_3](/Chapter03_Bootstrap/Projects/Luka_Shvelidze/Homework_3)
 - [სახელი გვარი | პროექტი](/მისამართი)
 - დავით ეგოიანი | [Feetback form](/Chapter03_Bootstrap/Projects/Davit%20Egoian/index.html) | [View](https://htmlpreview.github.io/?https://github.com/DavitEgoian/Python-Internship-2025/blob/main/Chapter03_Bootstrap/Projects/Davit%20Egoian/index.html) 
 - [Beka Gigashvili | Company Website] | [View](https://htmlpreview.github.io/?https://github.com/BekaGigashvili/Python-Internship-2025/blob/main/Chapter03_Bootstrap/Projects/Beka%20Gigashvili/about.html)

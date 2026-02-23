@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %} Sorder {% endblock %}</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+{% include 'navbar.html' %}
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+<footer>
+    &copy; 2025 Sorder. All rights are protected.
+</footer>
+</body>
+</html>
