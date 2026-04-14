@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+
+<form>
+
+    <p>Register Page</p>
+    <div class="form-group">
+    <input class="form-input" type="text" placeholder="Username"/><br>
+    <input class="form-input" type="password" placeholder="Password"/><br>
+    </div>
+    <div class="form-group">
+    <p>Birthdate</p>
+    <input class="form-input" type="date"/>
+
+    <p>Gender</p>
+    <input type="radio" name="gender"/>Male<br>
+    <input type="radio" name="gender"/>Female<br>
+    <p>Country "South Caucasus":</p>
+    <select>
+        <option>Georgia</option>
+        <option>Azerbaijan</option>
+        <option>Armenia</option>
+    </select><br>
+    </div>
+    <div class="form-group">
+    <p> Programming Languages</p>
+    <input type="checkbox" name="programming"/>Java<br>
+    <input type="checkbox" name="programming"/>Python<br>
+    <input type="checkbox" name="programming"/>C#<br>
+
+
+
+    <textarea class="form-input" placeholder="About you" cols="36" rows="12"></textarea>
+    <br>
+
+    </div>
+    <button class="button-success button">Register</button>
+    <a class="button-success button" href="index.html">Return</a>
+</form>
+
+</body>
+</html>

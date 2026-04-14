@@ -1,0 +1,129 @@
+{% extends "partials/base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<header class="hero d-flex align-items-center justify-content-center text-center">
+    <div style="max-width: 600px;">
+        <h1 class="display-3 fw-bold">Travel the World in Style 🌍</h1>
+        <p class="lead mb-4">Discover places, stories, and unforgettable adventures with GlobeTales.</p>
+        <form class="input-group mb-3">
+            <input type="text" class="form-control form-control-lg" placeholder="Search destinations..."
+                   aria-label="Search destinations">
+            <button class="btn btn-lg btn-custom" type="submit">Search</button>
+        </form>
+
+        <a href="trips.html" class="btn btn-outline-light btn-lg mt-2">Explore Destinations</a>
+    </div>
+</header>
+<section class="container my-5">
+    <h2 class="text-center mb-4">🤝 Our Trusted Partners</h2>
+    <div class="d-flex flex-wrap justify-content-center align-items-center gap-4">
+        <p>FlyGo Airlines</p>
+        <p>GlobeHotels</p>
+        <p>ExploreMore Tours </p>
+        <p>SafeTrip Insurance</p>
+        <p>PaySecure</p>
+    </div>
+</section>
+<div class="container my-5">
+    <h2 class="text-center mb-4">🌎 The best tours</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="https://images.unsplash.com/photo-1431274172761-fca41d930114?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBhcmlzfGVufDB8fDB8fHww" class="card-img-top" alt="Paris">
+                <div class="card-body">
+                    <h5 class="card-title">🇫🇷 Paris</h5>
+                    <p class="card-text">The city of love, fashion, and timeless beauty.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Tokyo">
+                <div class="card-body">
+                    <h5 class="card-title">🇯🇵 Tokyo</h5>
+                    <p class="card-text">A fusion of ancient traditions and modern innovation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG5ldyUyMHlvcmt8ZW58MHx8MHx8fDA%3D" class="card-img-top" alt="New York">
+                <div class="card-body">
+                    <h5 class="card-title">🇺🇸 New York</h5>
+                    <p class="card-text">The city that never sleeps. Lights, life, and skyscrapers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">❤️ What Our Travelers Say</h2>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner text-center">
+                <div class="carousel-item active">
+                    <div class="card shadow-sm mx-auto" style="max-width: 600px;">
+                        <div class="card-body">
+                            <p class="fs-5">"Best trip ever! The guides were amazing and the itinerary was perfect."</p>
+                            <h6 class="fw-bold mt-3">- Sarah M.</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card shadow-sm mx-auto" style="max-width: 600px;">
+                        <div class="card-body">
+                            <p class="fs-5">"GlobeTales made our vacation unforgettable. Highly recommended!"</p>
+                            <h6 class="fw-bold mt-3">- Alex P.</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card shadow-sm mx-auto" style="max-width: 600px;">
+                        <div class="card-body">
+                            <p class="fs-5">"Smooth booking, great communication, and fantastic experiences."</p>
+                            <h6 class="fw-bold mt-3">- Emily R.</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="btn btn-outline-primary mx-1 active dot">1</button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" class="btn btn-outline-primary mx-1 dot">2</button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" class="btn btn-outline-primary mx-1 dot">3</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container my-5">
+    <div class="p-5  text-center">
+        <h2>📧 Stay Updated!</h2>
+        <p>Subscribe to get the latest deals and travel inspiration straight to your inbox.</p>
+        <form class="row g-2 justify-content-center">
+            <div class="col-md-6">
+                <input type="email" class="form-control form-control-lg" placeholder="Enter your email">
+            </div>
+            <div class="col-md-auto">
+                <button type="submit" class="btn btn-primary btn-lg btn-custom">Subscribe</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="text-center py-5" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+    <div class="container text-light">
+        <h2 class="display-5 fw-bold">Ready for Your Next Adventure?</h2>
+        <p class="lead">Book your dream tour today with GlobeTales.</p>
+        <a href="/contact" class="btn btn-light btn-lg">Get Started</a>
+    </div>
+</section>
+
+
+<div style="background: red;">
+    {% for user in users %}
+    <h2>{{user}}</h2>
+    <img src="/static/upload/{{user['profile_image']}}">
+    {% endfor %}
+</div>
+
+{% endblock %}

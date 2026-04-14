@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container-md bg-white px-3 py-4 shadow border rounded d-flex justify-content-center">
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.name.label }}
+                {{ form.name(class="form-control") }}
+            </div>
+            <div>
+                {{ form.release_date.label }}
+                {{ form.release_date(class="form-control") }}
+            </div>
+            <div>
+                {{ form.genre.label }}
+                {{ form.genre(class="form-control") }}
+            </div>
+            <div>
+                {{ form.comment1_author.label }}
+                {{ form.comment1_author(class="form-control") }}
+            </div>
+            <div>
+                {{ form.comment1_text.label }}
+                {{ form.comment1_text(class="form-control") }}
+            </div>
+            <div>
+                {{ form.comment2_author.label }}
+                {{ form.comment2_author(class="form-control") }}
+            </div>
+            <div>
+                {{ form.comment2_text.label }}
+                {{ form.comment2_text(class="form-control") }}
+            </div>
+            <div>
+                {{ form.img.label }}
+                {{ form.img(class="form-control") }}
+            </div>
+
+            {{ form.submit(class="btn btn-success mt-2") }}
+
+        </form>
+    </div>
+{% endblock %}

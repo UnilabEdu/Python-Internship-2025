@@ -1,0 +1,19 @@
+{% macro create_navlink(endpoint_name, display_name) %}
+    <li class="nav-item">
+        <a class="nav-link {% if request.endpoint == endpoint_name %} active {% endif %}" href="{{ url_for(endpoint_name) }}"
+        >{{ display_name }}</a>
+    </li>
+{% endmacro %}
+{% macro create_card(product) %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ product['img'] }}"
+                 class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ product['name'] }}</h5>
+                <p class="card-text">{{ product['price'] }}</p>
+                <a href="/view_product/{{ product['id'] }}" class="btn btn-primary">View</a>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

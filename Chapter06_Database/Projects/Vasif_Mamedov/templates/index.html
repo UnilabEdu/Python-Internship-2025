@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% from "macros.html" import create_card  %}
+{% block content %}
+
+<div class="container-md bg-white py-1 shadow-lg rounded-4">
+    {% for user in users %}
+        <p>{{ user }}</p>
+    {% endfor %}
+    <div id="carouselExampleIndicators" class="carousel slide m-3" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+                <img src="https://zoommer.ge/_next/image?url=https%3A%2F%2Fs3.zoommer.ge%2Fsite%2Fb7d046d3-744f-466c-90bc-9d3ee02602c1_Thumb.jpeg&w=3840&q=75"
+                     class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://zoommer.ge/_next/image?url=https%3A%2F%2Fs3.zoommer.ge%2Fsite%2Fb7d046d3-744f-466c-90bc-9d3ee02602c1_Thumb.jpeg&w=3840&q=75"
+                     class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://zoommer.ge/_next/image?url=https%3A%2F%2Fs3.zoommer.ge%2Fsite%2Fb7d046d3-744f-466c-90bc-9d3ee02602c1_Thumb.jpeg&w=3840&q=75"
+                     class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <div class="row row-cols-md-4 row-cols-sm-2 row-cols-1 m-3">
+        {% for product in product_list %}
+            {{ create_card(product) }}
+        {% endfor %}
+    </div>
+
+
+
+</div>
+
+{% endblock %}

@@ -4,3 +4,5 @@
 - სახელი გვარი | [პროექტი](/მისამართი)
 
 ### 2025 ზაფხული
+- giorgi kelenjeridze | [Food Order app](/Chapter09_Admin/Projects/giorgikelenjeridze/app.py)
+- სალომე პაპაშვილი | [GlobeTales](/Chapter09_Admin/Projects/Salome_Papashvili/app.py)
