@@ -1,0 +1,97 @@
+{% extends "layouts/base.html" %}
+{% from "layouts/macros.html" import create_card with context %}
+{% block title %}Home - Coffeewood{% endblock %}
+
+{% block extra_css %}
+<style>
+.carousel-item { height: 400px; background-color: #1c1c1c; }
+.carousel-item iframe { width: 100%; height: 100%; border: none; }
+
+.carousel-wrapper {
+    position: relative;
+}
+
+.carousel-btn-prev,
+.carousel-btn-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.carousel-btn-prev { left: -50px; }
+.carousel-btn-next { right: -50px; }
+
+.carousel-btn-prev:hover,
+.carousel-btn-next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-md bg-transparent px-3 py-4 shadow border rounded">
+    {% for user in users %}
+        <p> {{ user }} </p>
+    {% endfor %}
+
+    <div class="carousel-wrapper mx-5 mb-4">
+        <button class="carousel-btn-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">&#10094;</button>
+        <button class="carousel-btn-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">&#10095;</button>
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <iframe src="https://www.youtube.com/embed/3zOLzsbOleM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="carousel-item">
+                    <iframe src="https://www.youtube.com/embed/e9HXmMnUEdE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="carousel-item">
+                    <iframe src="https://www.youtube.com/embed/9g0UKRT7cbI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="carousel-item">
+                    <iframe src="https://www.youtube.com/embed/i6w7O1kwuBk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+        {% for movie in movies %}
+            {{ create_card(movie) }}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const carousel = document.querySelector('#carouselExampleIndicators');
+
+    carousel.addEventListener('slide.bs.carousel', function () {
+        document.querySelectorAll('.carousel-item iframe').forEach(function(iframe) {
+            iframe.src = iframe.src;
+        });
+    });
+
+    new bootstrap.Carousel(carousel, {
+        interval: false,
+        ride: false
+    });
+</script>
+{% endblock %}
+
