@@ -1,0 +1,16 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Login - Coffeewood{% endblock %}
+
+{% block content %}
+<div class="container-md text-white bg-transparent px-3 py-4 shadow border rounded d-flex justify-content-center">
+    <form class="w-50" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.username(placeholder=form.username.label.text, class="form-control mb-2") }}
+        {{ form.password(placeholder=form.password.label.text, class="form-control mb-2") }}
+        {{ form.login(class="btn btn-success") }}
+        <a href="{{ url_for('main.index') }}" class="btn btn-danger">გაუქმება</a>
+    </form>
+</div>
+{% endblock %}
+

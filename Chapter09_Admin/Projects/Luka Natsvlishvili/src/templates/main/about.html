@@ -1,0 +1,34 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<style>
+.black-bold {
+    color: black;
+    font-weight: bold;
+}
+
+.light-gray-bg {
+    background-color: #f0f0f0;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+</style>
+
+<div class="container-md light-gray-bg">
+    <h2 class="mb-3 black-bold">პროექტის შესახებ</h2>
+
+    <p class="lead black-bold">
+        ამ პროექტის შთაგონება ფილმების ვებსაიტებსა და სოციალურ მედიაში ტოქსიკური კომენტარების სექციების დაკვირვებით გაჩნდა.
+        ამ პლატფორმის მიზანია უსაფრთხო, მოდერირებული გარემოს შექმნა, სადაც მომხმარებლებს შეეძლებათ ფილმების განხილვა
+        შეურაცხმყოფელი შინაარსის წაწყდომის გარეშე.
+    </p>
+
+    <hr style="border-top: 1px solid rgba(0,0,0,0.2);">
+
+    <p class="black-bold">
+       ვიმედოვნებთ, რომ წავახალისებთ შინაარსიან საუბრებს, ფილმების რეკომენდაციებს და ისეთ საზოგადოებას,
+        სადაც ყველა თავს კომფორტულად იგრძნობს.
+    </p>
+</div>
+{% endblock %}
