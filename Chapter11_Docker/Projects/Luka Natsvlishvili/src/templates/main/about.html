@@ -1,0 +1,92 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:wght@300;400&display=swap');
+
+  .cw-page { background: #0d0d0d; min-height: 100vh; font-family: 'Crimson Pro', Georgia, serif; color: #e8e0d4; }
+  .cw-hero { position: relative; overflow: hidden; padding: 80px 40px 60px; border-bottom: 1px solid rgba(200,160,80,0.2); }
+  .cw-film-strip { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: repeating-linear-gradient(90deg, #c8a050 0px, #c8a050 18px, transparent 18px, transparent 28px); opacity: 0.6; }
+  .cw-film-strip-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 6px; background: repeating-linear-gradient(90deg, #c8a050 0px, #c8a050 18px, transparent 18px, transparent 28px); opacity: 0.3; }
+  .cw-tag { display: inline-block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #c8a050; border: 1px solid rgba(200,160,80,0.4); padding: 4px 14px; border-radius: 2px; margin-bottom: 28px; }
+  .cw-title { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: #f5f0e8; line-height: 1.1; margin: 0 0 8px; }
+  .cw-title em { font-style: italic; color: #c8a050; }
+  .cw-subtitle { font-size: 16px; color: #7a7267; letter-spacing: 0.06em; font-weight: 300; }
+  .cw-body { max-width: 760px; margin: 0 auto; padding: 60px 40px; }
+  .cw-lead { font-size: 20px; line-height: 1.8; color: #c8c0b0; font-weight: 300; margin-bottom: 40px; padding-left: 28px; border-left: 3px solid rgba(200,160,80,0.5); }
+  .cw-divider { display: flex; align-items: center; gap: 16px; margin: 48px 0; opacity: 0.4; }
+  .cw-divider-line { flex: 1; height: 1px; background: #c8a050; }
+  .cw-divider-dot { width: 6px; height: 6px; background: #c8a050; transform: rotate(45deg); }
+  .cw-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 48px; }
+  .cw-feature { background: rgba(255,255,255,0.03); border: 1px solid rgba(200,160,80,0.12); border-radius: 4px; padding: 24px 20px; transition: border-color 0.3s, background 0.3s; }
+  .cw-feature:hover { border-color: rgba(200,160,80,0.35); background: rgba(200,160,80,0.04); }
+  .cw-feature-icon { font-size: 22px; margin-bottom: 12px; display: block; color: #c8a050; }
+  .cw-feature-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #e8e0d4; margin-bottom: 8px; }
+  .cw-feature-text { font-size: 14px; line-height: 1.7; color: #7a7267; }
+  .cw-closing { font-size: 18px; line-height: 1.85; color: #a09880; font-style: italic; text-align: center; font-family: 'Playfair Display', serif; padding: 32px 20px; border-top: 1px solid rgba(200,160,80,0.12); border-bottom: 1px solid rgba(200,160,80,0.12); }
+  .cw-logo-row { display: flex; align-items: center; gap: 14px; margin-top: 48px; justify-content: center; }
+  .cw-logo-line { width: 60px; height: 1px; background: rgba(200,160,80,0.3); }
+  .cw-logo-mark { font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 0.12em; color: #4a4540; text-transform: uppercase; }
+</style>
+
+<div class="cw-page">
+  <div class="cw-hero">
+    <div class="cw-film-strip"></div>
+    <span class="cw-tag">Coffeewood Entertainment</span>
+    <h1 class="cw-title">პროექტის<br><em>შესახებ</em></h1>
+    <p class="cw-subtitle">სადაც ფილმის ძიების პროცესი მარტივი და სასიამოვნო გამოცდილებაა</p>
+    <div class="cw-film-strip-bottom"></div>
+  </div>
+
+  <div class="cw-body">
+    <p class="cw-lead">
+      ამ პროექტის შთაგონება კარგი ფილმის ძიების პროცესში გაჩნდა — ჩვეულებისამებრ თითოეულ ჩვენგანს გვსურს
+      მოვისმინოთ სხვისი აზრი და გამოცდილება, ამიტომაც ვამოწმებთ კომენტარებს სოციალურ ქსელებსა
+      თუ უშუალოდ ფილმების საიტებზე. ხშირად კომენტარების სექცია რეალობისგან ამცდარი ან
+      შეურაცხმყოფელი მოსაზრებებითაა სავსე.
+    </p>
+
+    <div class="cw-features">
+      <div class="cw-feature">
+        <span class="cw-feature-icon">◈</span>
+        <div class="cw-feature-title">უსაფრთხო გარემო</div>
+        <p class="cw-feature-text">მოდერირებული სივრცე, სადაც ფილმების განხილვა შესაძლებელია ტოქსიკური შინაარსის გარეშე.</p>
+      </div>
+      <div class="cw-feature">
+        <span class="cw-feature-icon">◉</span>
+        <div class="cw-feature-title">კრიტიკოსების შეფასება</div>
+        <p class="cw-feature-text">თითოეულ ფილმს თან ახლავს 2 საერთაშორისოდ აღიარებული გამოცემის შეფასება.</p>
+      </div>
+      <div class="cw-feature">
+        <span class="cw-feature-icon">◇</span>
+        <div class="cw-feature-title">ჯანსაღი საუბარი</div>
+        <p class="cw-feature-text">ხელს ვუწყობთ შინაარსიან და ჯანსაღ დისკუსიებს, ფილმების რეკომენდაციებს და ისეთ საზოგადოებას,
+ სადაც ყველა თავს კომფორტულად იგრძნობს.
+</p>
+      </div>
+      <div class="cw-feature">
+        <span class="cw-feature-icon">◆</span>
+        <div class="cw-feature-title">ახალი გამოცდილება</div>
+        <p class="cw-feature-text">სრულიად განახლებული მიდგომა ფილმების აღმოჩენისა და შეფასების პროცესისადმი.</p>
+      </div>
+    </div>
+
+    <div class="cw-divider">
+      <div class="cw-divider-line"></div>
+      <div class="cw-divider-dot"></div>
+      <div class="cw-divider-line"></div>
+    </div>
+
+    <p class="cw-closing">
+      "ვიმედოვნებთ, რომ ჩვენი პლატფორმა იქნება თქვენთვის სრულიად ახალი გამოცდილება
+      ფილმების ძიების პროცესში — პლატფორმა, სადაც ყველა თავს კომფორტულად იგრძნობს."
+    </p>
+
+    <div class="cw-logo-row">
+      <div class="cw-logo-line"></div>
+      <div class="cw-logo-mark">Coffeewood · 2026</div>
+      <div class="cw-logo-line"></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
