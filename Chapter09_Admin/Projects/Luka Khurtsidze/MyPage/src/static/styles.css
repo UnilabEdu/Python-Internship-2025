@@ -1,0 +1,15 @@
+.body{
+    background-color: #913535;
+}
+
+
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    cursor: pointer;
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}

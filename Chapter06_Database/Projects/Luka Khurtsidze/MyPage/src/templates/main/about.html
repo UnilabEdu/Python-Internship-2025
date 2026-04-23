@@ -1,0 +1,211 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<style>
+    .about-wrapper {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 1.5rem 4rem;
+    }
+
+    /* Hero heading */
+    .about-hero {
+        text-align: center;
+        padding: 2.5rem 0 2rem;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+        margin-bottom: 3rem;
+    }
+    .about-hero h1 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 2.6rem;
+        color: #e4c06e;
+        letter-spacing: 0.04em;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    .about-hero .gold-rule {
+        width: 80px;
+        height: 1px;
+        background: linear-gradient(to right, transparent, #c9a84c, transparent);
+        margin: 1rem auto 1.25rem;
+    }
+    .about-hero p {
+        color: rgba(245, 230, 192, 0.65);
+        font-size: 1.1rem;
+        max-width: 580px;
+        margin: 0 auto;
+        font-family: 'Cormorant Garamond', serif;
+        line-height: 1.75;
+    }
+
+    /* Three pillars */
+    .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 3.5rem;
+    }
+    @media (max-width: 768px) {
+        .pillars-grid { grid-template-columns: 1fr; }
+        .about-hero h1 { font-size: 2rem; }
+    }
+    .pillar {
+        background: rgba(22, 40, 64, 0.5);
+        border: 1px solid rgba(201, 168, 76, 0.18);
+        border-top: 2px solid rgba(201, 168, 76, 0.5);
+        border-radius: 4px;
+        padding: 1.5rem 1.25rem;
+        text-align: center;
+        transition: border-color 0.2s, background 0.2s;
+    }
+    .pillar:hover {
+        border-top-color: #c9a84c;
+        background: rgba(22, 40, 64, 0.85);
+    }
+    .pillar h5 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.05rem;
+        color: #c9a84c;
+        margin-bottom: 0.6rem;
+        font-weight: 600;
+    }
+    .pillar p {
+        color: rgba(245, 230, 192, 0.6);
+        font-size: 0.95rem;
+        margin: 0;
+        font-family: 'Cormorant Garamond', serif;
+        line-height: 1.65;
+    }
+
+    /* Content panels */
+    .content-panel {
+        background: rgba(12, 25, 40, 0.6);
+        border: 1px solid rgba(201, 168, 76, 0.2);
+        border-radius: 6px;
+        padding: 2rem 2.25rem;
+        margin-bottom: 2rem;
+    }
+    .content-panel h2,
+    .content-panel h3 {
+        font-family: 'Playfair Display', serif;
+        color: #e4c06e;
+    }
+    .content-panel h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+    .content-panel h3 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    .content-panel p {
+        color: rgba(245, 230, 192, 0.75);
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.05rem;
+        line-height: 1.75;
+    }
+    .content-panel ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .content-panel ul li {
+        color: rgba(245, 230, 192, 0.75);
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.05rem;
+        padding: 0.4rem 0 0.4rem 1.5rem;
+        position: relative;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+    }
+    .content-panel ul li:last-child { border-bottom: none; }
+    .content-panel ul li::before {
+        content: '◆';
+        position: absolute;
+        left: 0;
+        color: #c9a84c;
+        font-size: 0.55rem;
+        top: 0.7rem;
+    }
+
+    /* Map panel */
+    .map-panel {
+        margin-bottom: 2rem;
+    }
+    .map-panel h3 {
+        font-family: 'Playfair Display', serif;
+        color: #e4c06e;
+        font-size: 1.15rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.04em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .map-panel h3::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 1px;
+        background: rgba(201, 168, 76, 0.5);
+    }
+    .map-wrapper {
+        border: 1px solid rgba(201, 168, 76, 0.25);
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    .map-wrapper iframe {
+        display: block;
+        filter: invert(90%) hue-rotate(180deg) brightness(0.85) saturate(0.7);
+    }
+</style>
+
+<div class="about-wrapper">
+
+    <!-- Hero -->
+    <div class="about-hero">
+        <h1>ჩვენს შესახებ</h1>
+        <div class="gold-rule"></div>
+        <p>
+            „მგოსანი" არის სივრცე, სადაც ქართული ლიტერატურა, ისტორია და ხელოვნება ერთიანდება.
+            ჩვენი მიზანია ქართველი მწერლების უკვდავი მემკვიდრეობის გაცოცხლება ხელოვნების თანამედროვე ფორმებით.
+        </p>
+    </div>
+
+    <!-- Pillars -->
+    <div class="pillars-grid">
+        <div class="pillar">
+            <h5>ხელნაკეთი სკულპტურები</h5>
+            <p>თითოეული სკულპტურა დამზადებულია დეტალებზე განსაკუთრებული ყურადღებით და მაღალი ხარისხის მასალებით.</p>
+        </div>
+        <div class="pillar">
+            <h5>კულტურული ღირებულება</h5>
+            <p>ჩვენი ნამუშევრები ასახავს ქართველი მწერლების სულიერ ძალას, იდეალებსა და ისტორიულ მნიშვნელობას.</p>
+        </div>
+        <div class="pillar">
+            <h5>იდეალური საჩუქარი</h5>
+            <p>შესაფერისია როგორც ინტერიერისთვის, ასევე განათლებისა და პატრიოტული აღზრდისთვის.</p>
+        </div>
+    </div>
+
+    <!-- Content panel -->
+    <div class="content-panel">
+        <h2>რატომ არის მწერლის სკულპტურის ქონა კარგი?</h2>
+        <p>
+            მწერლის სკულპტურა სახლში ან ოფისში ნიშნავს სილამაზეს, ინტელექტს და კულტურულ საგანძურს.
+            ეს არა მხოლოდ დეკორატიული ნივთია, არამედ ინსპირაციასაც აძლევს ადამიანს,
+            აფიქრებს ისტორიასა და მწერლის შემოქმედებაზე.
+        </p>
+        <h3>ჩვენ გთავაზობთ:</h3>
+        <ul>
+            <li>ილიას, აკაკის, ვაჟას, შოთას და გალაკტიონის სკულპტურებს</li>
+            <li>მიტანის სერვისს ნებისმიერ ადგილას</li>
+            <li>პატრიოტულ, ქართული კულტურის სიყვარულით შექმნილ ნივთებს</li>
+        </ul>
+        <p style="margin-top: 1.25rem;">
+            ჩვენი სკულპტურები შესანიშნავია საჩუქრად,
+            ასევე განათლებისა და კულტურული აღზრდის თვალსაზრისით.
+        </p>
+    </div>
+
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+{% endblock %}
