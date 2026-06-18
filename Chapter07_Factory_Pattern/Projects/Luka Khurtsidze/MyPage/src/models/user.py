@@ -1,0 +1,29 @@
+from MyPage.src.ext import db
+from MyPage.src.models.base import BaseModel
+from flask_login import UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
+
+
+
+class User(BaseModel, UserMixin):
+    __tablename__ = 'users'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), unique = True, nullable = False)
+    role =db.Column(db.String(24))
+    _password = db.Column(db.String(64), unique = True, nullable = False)
+
+
+    @property
+    def password(self):
+        return self._password
+
+    @password.setter
+    def password(self, value):
+        self._password = generate_password_hash(value)
+
+    def check_password(self, password):
+        return check_password_hash(self._password, password)
+
+    def is_admin(self):
+        return self.role == "admin"

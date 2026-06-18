@@ -1,0 +1,6 @@
+{% macro is_active(name)%}
+   {% if request.endpoint == name %}
+         active
+   {% endif %}
+
+{% endmacro %}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>მგოსანი</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0d1b2a;
+            --navy-mid: #132238;
+            --navy-light: #1c3252;
+            --navy-surface: #162840;
+            --gold: #c9a84c;
+            --gold-light: #e4c06e;
+            --gold-pale: #f5e6c0;
+            --gold-dark: #9a7a30;
+            --cream: #f8f2e4;
+            --text-muted-gold: #8a7040;
+            --border-gold: rgba(201, 168, 76, 0.3);
+            --border-gold-strong: rgba(201, 168, 76, 0.6);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            background-color: var(--navy);
+            color: var(--cream);
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--navy); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+
+        /* Alerts */
+        .alert-danger {
+            background: rgba(160, 40, 40, 0.2);
+            border: 1px solid rgba(200, 60, 60, 0.4);
+            color: #f5a0a0;
+            border-radius: 6px;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            border: none;
+            color: var(--navy);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            padding: 0.45rem 1.1rem;
+            border-radius: 3px;
+            transition: all 0.2s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--navy);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(201, 168, 76, 0.3);
+        }
+
+        .btn-warning {
+            background: transparent;
+            border: 1px solid var(--gold-dark);
+            color: var(--gold);
+            font-family: 'Cormorant Garamond', serif;
+            border-radius: 3px;
+            padding: 0.45rem 1.1rem;
+            transition: all 0.2s ease;
+        }
+        .btn-warning:hover {
+            background: rgba(201, 168, 76, 0.1);
+            color: var(--gold-light);
+        }
+
+        .btn-danger {
+            background: transparent;
+            border: 1px solid rgba(200, 60, 60, 0.5);
+            color: #e07070;
+            font-family: 'Cormorant Garamond', serif;
+            border-radius: 3px;
+            padding: 0.45rem 1.1rem;
+            transition: all 0.2s ease;
+        }
+        .btn-danger:hover {
+            background: rgba(200, 60, 60, 0.15);
+            color: #f09090;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            border: none;
+            color: var(--navy);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            border-radius: 3px;
+            padding: 0.4rem 1rem;
+        }
+        .btn-success:hover {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--navy);
+        }
+
+        .btn-outline-success {
+            background: transparent;
+            border: 1px solid var(--gold-dark);
+            color: var(--gold);
+            font-family: 'Cormorant Garamond', serif;
+            border-radius: 3px;
+            padding: 0.4rem 1rem;
+        }
+        .btn-outline-success:hover {
+            background: rgba(201, 168, 76, 0.1);
+            color: var(--gold-light);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--navy-surface);
+            border: 1px solid var(--border-gold);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px var(--border-gold-strong);
+        }
+        .card-body {
+            padding: 1rem 1.1rem;
+        }
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold-light);
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+        }
+        .card-text {
+            color: var(--gold);
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Headings */
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold-light);
+        }
+
+        /* Text muted override */
+        .text-muted {
+            color: rgba(245, 230, 192, 0.6) !important;
+        }
+
+        /* Section dividers */
+        .gold-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            margin: 2rem 0;
+            opacity: 0.5;
+        }
+
+        /* Container surface */
+        .container-md.shadow {
+            background: var(--navy-mid);
+            border-color: var(--border-gold) !important;
+        }
+    </style>
+</head>
+<body>
+{% include "layouts/navbar.html" %}
+
+{% set messages = get_flashed_messages() %}
+{% if messages %}
+  {% for message in messages %}
+    <div class="container mt-2">
+        <div class="alert alert-danger">
+          {{ message }}
+        </div>
+    </div>
+  {% endfor %}
+{% endif %}
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<style>
+    .view-wrapper {
+        min-height: calc(100vh - 80px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+    }
+
+    .view-card {
+        width: 100%;
+        max-width: 540px;
+        background: #132238;
+        border: 1px solid rgba(201, 168, 76, 0.25);
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+    }
+
+    .view-image-wrap {
+        position: relative;
+        overflow: hidden;
+        background: #0d1b2a;
+    }
+    .view-image-wrap img {
+        width: 100%;
+        height: 340px;
+        object-fit: cover;
+        display: block;
+        filter: brightness(0.88) saturate(0.85);
+        transition: filter 0.4s ease, transform 0.4s ease;
+    }
+    .view-card:hover .view-image-wrap img {
+        filter: brightness(0.95) saturate(1);
+        transform: scale(1.02);
+    }
+    .view-image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background: linear-gradient(to top, #132238, transparent);
+        pointer-events: none;
+    }
+
+    .view-body {
+        padding: 1.75rem 2rem 2rem;
+    }
+
+    .view-label {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        color: #c9a84c;
+        text-transform: uppercase;
+        margin-bottom: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .view-label::before,
+    .view-label::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: rgba(201, 168, 76, 0.2);
+    }
+
+    .view-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.05rem;
+    }
+    .view-table tr {
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+    }
+    .view-table tr:last-child {
+        border-bottom: none;
+    }
+    .view-table th {
+        color: rgba(201, 168, 76, 0.7);
+        font-weight: 500;
+        font-size: 0.85rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 0.7rem 0;
+        padding-right: 1.5rem;
+        white-space: nowrap;
+        vertical-align: top;
+        width: 1%;
+    }
+    .view-table td {
+        color: #f8f2e4;
+        padding: 0.7rem 0;
+        font-size: 1.1rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+    }
+
+    .view-actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 1.75rem;
+        flex-wrap: wrap;
+    }
+    .btn-back {
+        background: transparent;
+        border: 1px solid rgba(201, 168, 76, 0.35);
+        color: #c9a84c;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        padding: 0.45rem 1.1rem;
+        border-radius: 3px;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .btn-back:hover {
+        background: rgba(201, 168, 76, 0.08);
+        color: #e4c06e;
+    }
+    {% if current_user.is_authenticated %}
+    .btn-edit-inline {
+        background: transparent;
+        border: 1px solid rgba(201, 168, 76, 0.35);
+        color: #c9a84c;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.9rem;
+        padding: 0.45rem 1.1rem;
+        border-radius: 3px;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .btn-edit-inline:hover {
+        background: rgba(201, 168, 76, 0.1);
+        color: #e4c06e;
+    }
+    .btn-delete-inline {
+        background: transparent;
+        border: 1px solid rgba(200, 60, 60, 0.35);
+        color: #d07070;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.9rem;
+        padding: 0.45rem 1.1rem;
+        border-radius: 3px;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .btn-delete-inline:hover {
+        background: rgba(200, 60, 60, 0.12);
+        color: #f09090;
+    }
+    {% endif %}
+</style>
+
+<div class="view-wrapper">
+    <div class="view-card">
+
+        <div class="view-image-wrap">
+            <img src="/static/uploads/{{ product.img }}" alt="{{ product.name }}">
+            <div class="view-image-overlay"></div>
+        </div>
+
+        <div class="view-body">
+            <div class="view-label">სკულპტურა</div>
+
+            <table class="view-table">
+                <tr>
+                    <th>სახელი</th>
+                    <td>{{ product.name }} {{ product.surname }}</td>
+                </tr>
+                <tr>
+                    <th>ფასი</th>
+                    <td>{{ product.price }}</td>
+                </tr>
+            </table>
+
+            <div class="view-actions">
+                <a href="{{ url_for('main.home') }}" class="btn-back">← უკან</a>
+                {% if current_user.is_authenticated %}
+                    <a href="/edit_product/{{ product.id }}" class="btn-edit-inline">შეცვლა</a>
+                    <a href="/delete_product/{{ product.id }}" class="btn-delete-inline">წაშლა</a>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

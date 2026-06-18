@@ -1,0 +1,155 @@
+{% from "macros.html" import is_active %}
+
+<style>
+    .mgosani-nav {
+        background: #0a1520;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+        padding: 0.75rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .mgosani-nav .navbar-brand {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.5rem;
+        color: #c9a84c !important;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    .mgosani-nav .navbar-brand::before {
+        content: '⸻ ';
+        font-size: 0.7rem;
+        opacity: 0.5;
+        vertical-align: middle;
+        margin-right: 4px;
+    }
+    .mgosani-nav .navbar-brand::after {
+        content: ' ⸻';
+        font-size: 0.7rem;
+        opacity: 0.5;
+        vertical-align: middle;
+        margin-left: 4px;
+    }
+
+    .mgosani-nav .nav-link {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 1rem;
+        letter-spacing: 0.06em;
+        color: rgba(245, 230, 192, 0.75) !important;
+        padding: 0.4rem 1rem !important;
+        position: relative;
+        transition: color 0.2s;
+    }
+    .mgosani-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 1rem;
+        right: 1rem;
+        height: 1px;
+        background: #c9a84c;
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+    }
+    .mgosani-nav .nav-link:hover,
+    .mgosani-nav .nav-link.active {
+        color: #e4c06e !important;
+    }
+    .mgosani-nav .nav-link:hover::after,
+    .mgosani-nav .nav-link.active::after {
+        transform: scaleX(1);
+    }
+
+    .mgosani-nav .navbar-toggler {
+        border: 1px solid rgba(201, 168, 76, 0.4);
+        color: #c9a84c;
+    }
+    .mgosani-nav .navbar-toggler-icon {
+        filter: invert(70%) sepia(40%) saturate(600%) hue-rotate(10deg);
+    }
+
+    .mgosani-nav .btn-auth-login {
+        background: linear-gradient(135deg, #9a7a30, #c9a84c);
+        border: none;
+        color: #0d1b2a;
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 500;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        padding: 0.35rem 1rem;
+        border-radius: 3px;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .mgosani-nav .btn-auth-login:hover {
+        background: linear-gradient(135deg, #c9a84c, #e4c06e);
+        color: #0d1b2a;
+        transform: translateY(-1px);
+    }
+
+    .mgosani-nav .btn-auth-register {
+        background: transparent;
+        border: 1px solid rgba(201, 168, 76, 0.5);
+        color: #c9a84c;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        padding: 0.35rem 1rem;
+        border-radius: 3px;
+        text-decoration: none;
+        transition: all 0.2s;
+        margin-left: 6px;
+    }
+    .mgosani-nav .btn-auth-register:hover {
+        background: rgba(201, 168, 76, 0.1);
+        color: #e4c06e;
+    }
+
+    .mgosani-nav .btn-auth-logout {
+        background: transparent;
+        border: 1px solid rgba(200, 60, 60, 0.4);
+        color: #e07070;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.9rem;
+        padding: 0.35rem 1rem;
+        border-radius: 3px;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .mgosani-nav .btn-auth-logout:hover {
+        background: rgba(200, 60, 60, 0.15);
+        color: #f09090;
+    }
+</style>
+
+<nav class="mgosani-nav navbar navbar-expand-lg mb-3">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand" href="#">მგოსანი</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link {{ is_active('main.home') }}" href="{{ url_for('main.home') }}">მთავარი</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ is_active('main.about') }}" href="{{ url_for('main.about') }}">ჩვენს შესახებ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ is_active('auth.register') }}" href="{{ url_for('auth.register') }}">რეგისტრაცია</a>
+        </li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        {% if current_user.is_authenticated %}
+            <a class="btn-auth-logout" href="{{ url_for('auth.logout') }}">გასვლა</a>
+        {% else %}
+            <a class="btn-auth-login" href="{{ url_for('auth.login') }}">შესვლა</a>
+            <a class="btn-auth-register" href="{{ url_for('auth.register') }}">რეგისტრაცია</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>
